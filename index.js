@@ -57,7 +57,6 @@ app.post('/users/', function (req, res) {
     let user_id = req.body.id;
 
     users.push({ name: name, email: email, id: user_id })
-    //console.log(">>>>>>>>>>>>>",JSON.stringify(users.push({name:name,email:email,id:user_id})))
     res.send(users);
 
 });
@@ -96,8 +95,6 @@ app.put('/users/', function (req, res) {
     })
 
     if (UserData != null) {
-        console.log("UserData.id", UserData.id);
-        console.log("req.body.id", req.body.id);
         if (UserData.id == req.body.id) {
             if (req.body.id != null) {
                 UserData.id == req.body.id;
