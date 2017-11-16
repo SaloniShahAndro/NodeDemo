@@ -69,14 +69,15 @@ app.delete('/users/:id', function (req, res) {
     user_id = req.params.id;
 
     var userData = users.find(findUser);
-    console.log("userData", userData)
-    console.log("user_id", user_id)
 
     if (userData != null) {
         if (userData.id == user_id) {
 
-            var splice = users.splice((userData.id) - 1, 1)
-            console.log("splice", splice)
+            var index = users.findIndex(function(item, i){
+                return item.id == user_id
+              });
+            var splice = users.splice(index, 1)
+            console.log("index", index)
 
         }
     }
@@ -84,6 +85,7 @@ app.delete('/users/:id', function (req, res) {
 
 
 })
+
 
 ////////////////////////////PUT////////////////////////
 
