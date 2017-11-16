@@ -97,9 +97,15 @@ app.put('/users/', function (req, res) {
         console.log("UserData.id", UserData.id);
         console.log("req.body.id", req.body.id);
         if (UserData.id == req.body.id) {
-            UserData.id == req.body.id;
-            UserData.name = req.body.name;
-            UserData.email = req.body.email;
+            if (req.body.id != null) {
+                UserData.id == req.body.id;
+            }
+            if (req.body.name != null) {
+                UserData.name = req.body.name;
+            }
+            if (req.body.email != null) {
+                UserData.email = req.body.email;
+            }
         }
     }
 
